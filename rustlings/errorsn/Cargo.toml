@@ -1,0 +1,6 @@
+[package]
+name = "errorsn"
+version = "0.1.0"
+authors = ["yhorie <yuk.horie@gmail.com>"]
+
+[dependencies]
