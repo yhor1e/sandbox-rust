@@ -1,4 +1,5 @@
 use std::io;
+// or call L11 method by 'std::io::stdin()'
 
 fn main() {
     println!("Guess the number!");
