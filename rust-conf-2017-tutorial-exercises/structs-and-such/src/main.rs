@@ -1,8 +1,11 @@
+#![allow(dead_code)]
+
 struct Store {
     name: String,
     items: Vec<Item>,
 }
 
+#[derive(Debug)]
 struct Item {
     name: String,
     price: f32,
@@ -28,22 +31,34 @@ impl Store {
         }
         None
     }
-    fn total_price(&self, shopping_list: &[&str]) -> Option<f32> {
-        Some(0.0)
+    fn total_price(&self, _shopping_list: &[&str]) -> Option<f32> {
+        println!("{:?}", _shopping_list);
+
+        let mut sum = 0.0;
+
+        for item in _shopping_list {
+            println!("{:?}...", self.price(item));
+
+            match self.price(item) as Option<f32> {
+                Option::Some(val) => sum = sum + val,
+                Option::None => None,
+            }
+        }
+        Some(sum)
     }
 }
 
 fn build_store() -> Store {
     let mut store = Store::new(format!("Rustmart"));
-    sotre.add_item(Item {
+    store.add_item(Item {
         name: format!("chocolate"),
         price: 5.0,
     });
-    sotre.add_item(Item {
+    store.add_item(Item {
         name: format!("socks"),
         price: 23.0,
     });
-    sotre.add_item(Item {
+    store.add_item(Item {
         name: format!("plush Mozilla dinosaur"),
         price: 13.0,
     });
