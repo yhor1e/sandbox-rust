@@ -39,10 +39,13 @@ impl Store {
         for item in _shopping_list {
             println!("{:?}...", self.price(item));
 
-            match self.price(item) as Option<f32> {
-                Option::Some(val) => sum = sum + val,
-                Option::None => None,
+            let o = self.price(item);
+
+            if o.is_none() {
+                return None;
             }
+
+            sum += o.unwrap();
         }
         Some(sum)
     }
