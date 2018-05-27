@@ -18,3 +18,7 @@ $ cargo run
 ## ./rust-conf-2017-tutorial-exercises
 
 [RustConf 2017 Tutorial Exercises](http://www.rust-tutorials.com/RustConf17/)
+
+## ./trpl
+
+[The Rust Programming Language: 2nd Edition](https://y-yu.github.io/trpl-2nd-pdf/book.pdf)
